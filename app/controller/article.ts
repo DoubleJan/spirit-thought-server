@@ -8,4 +8,11 @@ export default class HomeController extends Controller {
     ctx.body = templetes.simpleGet(data);
   }
 
+  // 获取文章详情
+  public async getArticleContent() {
+    const { ctx } = this;
+    const data = await ctx.service.article.readArticleContent(ctx.params.articleId);
+    ctx.body = templetes.simpleGet(data);
+  }
+
 }

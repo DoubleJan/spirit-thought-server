@@ -4,5 +4,5 @@ export default (app: Application) => {
   const { controller, router } = app;
 
   router.get('/api/article', controller.article.index);
-
+  router.get('/api/article/:articleId', controller.article.getArticleContent);
 };
