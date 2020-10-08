@@ -11,7 +11,6 @@ export default class HomeController extends Controller {
   // 获取文章详情
   public async getArticleContent() {
     const { ctx, app } = this;
-    console.log(app.config);
     const data = await ctx.service.article.readArticleContent(app.config.fileRoot, ctx.params.articleId);
     ctx.body = templetes.simpleGet(data);
   }
